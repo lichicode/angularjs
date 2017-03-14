@@ -1,0 +1,196 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hello Ionic</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3>Welcome to your first Ionic app!</h3>
+
+  <p>
+    This starter project is our way of helping you get a functional app running in record time.
+  </p>
+  <p>
+    Follow along on the tutorial section of the Ionic docs!
+  </p>
+  <p>
+    <button ion-button color="twitter" menuToggle>Toggle Menu</button>
+    <button ion-button color="twitter" (click)="openSheets()">Action Sheets</button>
+    <button ion-button color="twitter" (click)="openAlerts()">Alerts</button>
+    <button ion-button color="twitter" (click)="presentToast()">Toast</button>
+  </p>
+
+<!--Toggle组件-->
+<ion-item> 
+    <ion-label> Sam</ion-label> 
+    <ion-toggle  checked="false"></ion-toggle> 
+</ion-item>
+
+<ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>Followers
+    <!--Badges是一个小组件，用来向用户显示一个小数字-->
+    <ion-badge item-right  color="secondary">260k</ion-badge>
+</ion-item>
+
+<!--可以为按钮添加color属性。Ionic提供了很多默认的颜色，也可以很容易的被修改-->
+<button ion-button color="light">Light</button>
+<!--为了使用轮廓线样式，只需要添加一个outline属性-->
+<button ion-button outline>Primary Outline</button>
+<!--使用Clear样式，只需要添加clear属性-->
+<button ion-button clear>Primary Clear</button>
+<!--创建一个圆形边框的按钮，需要添加一个round属性-->
+<button ion-button round>Primary Round</button>
+<!--按钮添加一个block属性会使按钮占据父级容器100%的宽度。跟添加displa:block的作用是相同的-->
+<button ion-button block (click)="pageSkip()">Block Button</button>
+<!--给按钮添加full属性会使按钮占据父级容器100%的宽度。除此之外还会移除按钮的左右边框。这个属性在需要按钮撑满显示区域的时候很有用-->
+<button ion-button full>Full Button</button>
+
+<!--为了给按钮添加图标，在按钮内部添加一个icon组件，并设置图标的位置属性-->
+<!-- Float the icon left -->
+<button ion-button icon-left>
+    <ion-icon name="home"></ion-icon>
+    Left Icon
+</button>
+<!-- Float the icon right -->
+<button ion-button icon-right>
+    Right Icon
+    <ion-icon name="home"></ion-icon>
+</button>
+<!-- Only icon (no text) -->
+<button ion-button icon-only>
+    <ion-icon name="home"></ion-icon>
+</button>
+
+<!--CheckBox组件-->
+<ion-item>
+    <ion-label>Daenerys Targaryen</ion-label>
+    <ion-checkbox color="dark" checked="true"></ion-checkbox>
+</ion-item>
+<!--disabled属性禁止用户修改值-->
+<ion-item>
+    <ion-label>Arya Stark</ion-label>
+    <ion-checkbox [disabled]="ngdisable"></ion-checkbox>
+</ion-item>
+<!--DateTime组件-->
+<ion-item>
+    <ion-label>Start Time</ion-label>
+    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStarts"></ion-datetime>
+</ion-item>
+
+
+<!-- FABs(浮动按钮) -->
+
+<ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+    <ion-fab-list side="left">
+        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+</ion-fab>
+
+<!-- Grid -->
+<ion-grid>
+    <ion-row>
+        <ion-col width-33>1.This column will take 33.3% of space</ion-col>
+        <ion-col width-33>2.This column will take 33.3% of space</ion-col>
+        <ion-col width-33>3.This column will take 33.3% of space</ion-col>
+    </ion-row>
+</ion-grid>
+<!-- Icons --> 
+<ion-item>
+    <ion-icon [name]="myIcon" isActive="true"></ion-icon>
+</ion-item>
+
+<ion-list inset>
+    <ion-item>
+        <ion-label stacked>Usernameasdasdasd</ion-label>
+        <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password"></ion-input>
+    </ion-item>
+     <ion-item> 
+        <ion-avatar item-left> 
+            <img src="assets/img/humbnail-totoro.jpg"> 
+        </ion-avatar> 
+        <h2>Cher</h2> 
+        <p>Ugh. As if.</p> 
+    </ion-item>
+</ion-list>
+
+<ion-item-group> 
+        <ion-item-divider light>A</ion-item-divider> 
+        <ion-item>Angola</ion-item> 
+        <ion-item>Argentina</ion-item> 
+</ion-item-group> 
+
+<ion-list> 
+    <ion-item-sliding> 
+        <ion-item> 
+            <ion-avatar item-left> 
+                <img src="assets/img/humbnail-totoro.jpg"> 
+            </ion-avatar> 
+            <h2>Slimer</h2> 
+        </ion-item> 
+        <ion-item-options side="left"> 
+            <button ion-button color="primary"> 
+                <ion-icon name="text"></ion-icon> 
+                Text 
+            </button> 
+            <button ion-button color="secondary"> 
+                <ion-icon name="call"></ion-icon> 
+                Call 
+            </button> 
+        </ion-item-options> 
+        <ion-item-options side="right"> 
+            <button ion-button color="primary"> 
+                <ion-icon name="mail"></ion-icon> 
+                Email 
+            </button> 
+        </ion-item-options> 
+    </ion-item-sliding> 
+</ion-list>
+
+<ion-list> 
+    <ion-item> 
+        <ion-thumbnail item-left> 
+            <img src="assets/img/humbnail-totoro.jpg"> 
+        </ion-thumbnail> 
+        <h2>My Neighbor Totoro</h2> 
+        <p>Hayao Miyazaki • 1988</p> 
+        <button clear item-right>View</button> 
+    </ion-item> 
+   <!--如果要实现多选，给ion-select组件添加multiple="true"即可。-->
+    <ion-item> 
+        <ion-label>Gaming</ion-label> 
+        <ion-select [(ngModel)]="gaming" cancelText="取消" okText="确认"> 
+            <ion-option value="nes">NES</ion-option> 
+            <ion-option value="n64">Nintendo64</ion-option> 
+            <ion-option value="ps">PlayStation</ion-option> 
+            <ion-option value="genesis">Sega Genesis</ion-option> 
+            <ion-option value="saturn">Sega Saturn</ion-option> 
+            <ion-option value="snes">SNES</ion-option> 
+        </ion-select> 
+    </ion-item>
+</ion-list>
+
+<ion-slides pager>
+    <ion-slide style="background-color: green">
+        <h2>Slide 1</h2>
+    </ion-slide>
+    <ion-slide style="background-color: blue">
+        <h2>Slide 2</h2>
+    </ion-slide>
+    <ion-slide style="background-color: red">
+        <h2>Slide 3</h2>
+    </ion-slide>
+</ion-slides>
+
+</ion-content>

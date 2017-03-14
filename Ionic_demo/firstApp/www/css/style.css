@@ -1,0 +1,50 @@
+/* Empty. Add your own CSS if you like */
+
+/*tabs条带风格自定义 tabs-striped */
+.tabs-striped .tabs .tab-title{
+  font-family:"微软雅黑" !important;
+  color: #FF7A01; !important;
+}
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  margin-top: -2px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  border-color: #FF7A01;
+}
+
+.slide-tab{
+  display: table;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  background-color: #eff0f2;
+  border-bottom: 2px solid #00897B;
+
+}
+
+.slide-tab li{
+  float: left;
+  line-height: 38px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.slide-tab a{
+  background-color: #eff0f2;
+  border-bottom: 1px solid #fff;
+  color: #888;
+  font-weight: 500;
+  display: block;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0 20px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid #00897B;
+}
+.current a{
+  color: #fff;
+  background: #00897B;
+}

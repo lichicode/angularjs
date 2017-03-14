@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- requirejs/require js -->
+    <script data-main="js/main.js" src="lib/requirejs/require.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+
+    <!-- your app's js
+    <script src="js/app.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/services/services.js"></script>
+    -->
+  </head>
+  <body>
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <!--<ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>-->
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <!-- 初始化时渲染视图模板 -->
+    <!--<ion-nav-view></ion-nav-view>-->
+
+  <ion-content scroll="false" ng-controller="AppCtrl">
+    <ion-side-menus enable-menu-with-back-views="false">
+      <!--中间内容-->
+      <ion-side-menu-content>
+        <!--导航栏-->
+        <ion-nav-bar class="bar-stable" animation="nav-title-slide-ios7">
+          <!--返回按钮-->
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+          <!--左侧按钮-->
+          <ion-nav-buttons>
+            <!--<button class="button button-icon icon ion-navicon" menu-toggle="left"></button>-->
+            <img src="http://test.lbwan.com/test/xiaohu/images/icon.png" class="button-icon" style="height: 44px;width: auto">
+          </ion-nav-buttons>
+        </ion-nav-bar>
+
+        <!--初始化时渲染视图模板-->
+        <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+      </ion-side-menu-content>
+      <!--左侧菜单-->
+
+      <ion-side-menu side="left" >
+        <ion-header-bar class="bar-positive">
+          <h1 class="title" >栏目</h1>
+        </ion-header-bar>
+        <ion-content>
+          <ion-list>
+            <!--menu-close 关闭当前打开的侧栏菜单。-->
+            <ion-item menu-close href="#/tab/dash">全部</ion-item>
+
+            <ion-item ng-repeat="tab in tabs" menu-close href="#/tab/chats/{{tab.value}}">
+              <span ng-bind="tab.label"></span>
+            </ion-item>
+
+          </ion-list>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>
+  </ion-content>
+
+  </body>
+</html>

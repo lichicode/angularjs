@@ -1,0 +1,16 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+    </ion-list>
+
+    <button ng-click="openModal()">弹出确认框</button>
+
+    <label class="item item-input">
+      <span class="input-label">Month</span>
+      <input type="month">
+    </label>
+  </ion-content>
+</ion-view>

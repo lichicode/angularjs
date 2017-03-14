@@ -1,0 +1,16 @@
+{
+  "status":"success",
+  "message":"错误信息",
+  "data": {
+    "userId": 1,
+    "userNum":"13750870542",
+    "username":"据呵呵",
+    "picURL": "http://192.168.6.201:8080/webapi/checkLogin/headpic.png",
+    "integral": "3",
+    "tag":"3",
+    "isEnable":false,
+    "isMembership":false,
+    "regionname":"杭州",
+    "regioncode": "330100"
+  }
+}

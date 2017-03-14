@@ -1,0 +1,94 @@
+/* Empty. Add your own CSS if you like */
+
+
+
+
+
+/*ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+  color: #38ADFF;
+}*/
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: '微软雅黑';
+  font-size: 14px;
+}
+
+.home-slide  ion-slide img{
+  height: 150px;
+  width: 100%;
+}
+.slider-pager {
+  position: absolute;
+  bottom: 20px;
+  width: 98%;
+  height: 5px;
+  text-align: right;
+}
+
+.slider-pager .slider-pager-page {
+  display: inline-block;
+  margin: 0px 3px;
+  width: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.3;
+  font-size: 10px;
+}
+
+.left {
+  float: left;
+  margin-left: 4%;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "微软雅黑";
+}
+
+.right {
+  float: right;
+  margin-right: 4%;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  color: #999;
+}
+
+.daohang {
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.banner-1 {
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+.banner-2 {
+  width: 47%;
+  float: left;
+  margin-left: 1.6%;
+  margin-top: 2%;
+  height: 150px;
+  border: #e0e0e0 1px solid;
+  position: relative;
+}
+
+.rj-sm-red-icon {
+  position: absolute;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #FF0000;
+  line-height: 18px;
+  text-align: center;
+  top: 5px;
+  left: 40px;
+}
+
+.rj-sm-red-icon_p_font {
+  color: #FFF;
+  font-size: 12px;
+}

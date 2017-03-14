@@ -1,0 +1,45 @@
+
+<ion-view view-title="三级分类">
+  <ion-content class="padding">
+
+    <div class="row">
+      <ul class="slide-tab">
+        <li ng-class="slideIndex == $index ? 'current col-25':'col-25'" ng-repeat="item in firstClass">
+          <a href="#" ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-20" >
+        <ul>
+          <li ng-class="slideSecondIndex == item.id-1 ? 'current row-baseline':'row-baseline'" ng-repeat="item in secondClass" style="line-height: 38px;">
+            <a href="#" ng-click="secondClick($index,item)" ng-bind="item.name" style="border: 2px solid blue"> </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-80" style="border: 2px solid yellow">
+        <ul>
+          <li ng-class="slideThirdIndex == item.id-1 ? 'current row-baseline':'row-baseline'" ng-repeat="item in thirdClass" style="line-height: 38px;">
+            <a href="#" ng-click="thirdClick($index,item)" ng-bind="item.name" style="border: 2px solid red"> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div ng-bind="text">
+
+    </div>
+
+    <div class="row">
+      <ul class="slide-tab">
+        <li ng-class="slideIndex2 == $index ? 'current col-25':'col-25'" ng-repeat="item in initSlideTabs.data">
+          <a href="#" ng-click="activeSlide($index)" ng-bind="item.name"></a>
+        </li>
+      </ul>
+    </div>
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex2"  does-continue="{{initSlideTabs.doesContinue}}" show-pager="{{initSlideTabs.showPager}}">
+      <ion-slide ng-repeat="item in initSlideTabs.data">
+        <div ng-include="item.tpl" class="padding"></div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

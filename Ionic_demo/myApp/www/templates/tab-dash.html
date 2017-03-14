@@ -1,0 +1,79 @@
+<ion-view view-title="主页">
+
+  <!--左侧按钮-->
+  <ion-nav-buttons>
+    <button class="button button-clear button-positive" menu-toggle="left">
+      <img src="http://test.lbwan.com/test/xiaohu/images/icon.png" class="button-icon" style="height: 44px;width: auto">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content >
+
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <ion-slide-box does-continue="true" delegate-handle="slideboximgs" auto-play="true" show-pager="true" slide-interval="2000" on-slide-changed="go_changed(index)">
+      <ion-slide ng-repeat="item in topimages">
+        <div class="box">
+          <img ng-src="{{item.image}}" style="height:100%;width:100%;">
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="row row-wrap">
+      <div class="col col-33" ng-repeat="ionpic in ionlists"
+         style="text-align: center;"
+         ng-click="ionlistsclick($index,ionpic.type)">
+        <img ng-src={{ionpic.image}} class='img-responsive' style="width: 70px;height: 70px;margin-left: 10px;"/>
+        <p>{{ionpic.name}}</p>
+      </div>
+    </div>
+
+    <div class="row padding" >
+      <img ng-src="img/home/banner.png" style="width:100%; height:80px;">
+    </div>
+
+    <div class="row row-wrap">
+      <div class="col col-33" ng-repeat="ionpic2 in ionlists2" style="text-align: center;">
+        <img ng-src={{ionpic2.image}} class='img-responsive' style="width: 70px;height: 70px;margin-left: 10px;"/>
+        <p >{{ionpic2.name}}</p>
+      </div>
+    </div>
+
+    <div class="row row-wrap" >
+      <div class="daohang">
+        <span class="left">限时特惠</span>
+        <span class="right"></span>
+      </div>
+
+      <div class="banner-1" style="padding-bottom:2%;">
+        <a href="#">
+          <div class="banner-2">
+            <p style="position:absolute; left:16px; top:5px;">厨具/卫浴</p>
+            <img style="margin-top:40px; width:120px;" src="img/home/f1.png">
+          </div>
+        </a>
+        <a href="#">
+          <div class="banner-2">
+            <p style="position:absolute; left:16px; top:5px;">日用/家纺</p>
+            <img style="margin-top:40px; width:120px;" src="img/home/f1.png">
+          </div>
+        </a>
+        <a href="#">
+          <div class="banner-2">
+            <p style="position:absolute; left:16px; top:5px;">家电/数码</p>
+            <img style="margin-top:40px; width:120px;" src="img/home/f1.png">
+          </div>
+        </a>
+        <a href="#">
+          <div class="banner-2">
+            <p style="position:absolute; left:16px; top:5px;">运动/箱包</p>
+            <img style="margin-top:40px; width:120px;" src="img/home/f1.png">
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

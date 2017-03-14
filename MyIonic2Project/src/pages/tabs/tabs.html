@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Tabs page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+
+
+Attr	             Type	      Desc
+[root] 	           Page	      指定tab希望加载的页面
+tabTitle	         string	    tab上显示的标题
+tabIcon	           string	    tab上显示的图标
+tabBadge	         string	    tab上显示的角标数字
+tabBadgeStyle	     string	    角标数字的颜色
+enabled	           boolean	  tab是否可用，默认为true
+show	             boolean	  tab是否显示
+[rootParams]	     object	    tab上传递的参数
+tabUrlPath	       string	    点击tab时跳转的页面url
+swipeBackEnabled	 boolean	  是否支持滑动后退
+tabsHideOnSubPages boolean	  在子页面是否隐藏
+(ionSelect)	       方法	      tab select 方法
+-->
+<!--<ion-tabs #mainTabs>
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="me" tabIcon="contacts" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+</ion-tabs>-->
+
+<ion-tabs #mainTabs (ionChange)="changeTabs()" tabsHighlight="true">
+    <ion-tab [root]="tab1Root" [rootParams]="homeParams" tabTitle="Home" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root"  tabTitle="Friends" tabIcon="aperture" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+    <!--(ionSelect)="selectFriend()"-->
+    <ion-tab [root]="tab3Root"  enabled="true"  swipeBackEnabled="true" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+</ion-tabs>

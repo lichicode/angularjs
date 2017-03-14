@@ -1,0 +1,58 @@
+<div id="login" >
+    <form class="form-horizontal">
+        <div class="title control-group">
+            <label class="control-label" for="inputEmail">Login</label>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+                <input type="text" id="inputEmail" placeholder="Email" ng-model="login.email">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+                <input type="password" id="inputPassword" placeholder="Password" ng-model="login.password">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"> Remember me
+                </label>
+                <button type="button" class="btn btn-success" ng-click="login.submit()">Sign in</button>
+            </div>
+        </div>
+    </form>
+
+    <ul>
+        <li ng-repeat="person in developers | orderBy:'name'">
+            {{person.name}} from {{person.country}}
+        </li>
+    </ul>
+
+    <span ng-bind="1232.12 | currency"></span>
+
+
+    <div class="row">
+        <div class="col-md-2">单选下拉</div>
+        <div class="col-md-5">
+            <select ui-select2="vm.option1" ng-model="vm.value1" style="width: 100%">
+                <option value="one">First</option>
+                <option value="two">Second</option>
+                <option value="three">Third</option>
+            </select>
+        </div>
+        <div class="col-md-5">{{vm.value1}}</div>
+    </div>
+
+    <br/>
+    <div class="row">
+        <div class="col-md-2">多选输入</div>
+        <div class="col-md-5">
+            <input type="text" ui-select2="vm.option2" ng-model="vm.value2" style="width: 100%"/>
+        </div>
+        <div class="col-md-5">{{vm.value2}}</div>
+    </div>
+
+</div>

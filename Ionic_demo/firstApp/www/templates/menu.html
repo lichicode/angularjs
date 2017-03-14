@@ -1,0 +1,55 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <!--中间内容-->
+  <ion-side-menu-content>
+    <!--导航栏-->
+    <ion-nav-bar class="bar-stable" animation="nav-title-slide-ios7">
+      <!--返回按钮-->
+      <ion-nav-back-button></ion-nav-back-button>
+      <!--左侧按钮-->
+      <ion-nav-buttons>
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <!--初始化时渲染视图模板-->
+    <ion-view>
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+      <!-- Dashboard Tab -->
+      <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+        <ion-nav-view name="tab-dash"></ion-nav-view>
+      </ion-tab>
+
+      <!-- Chats Tab -->
+      <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
+        <ion-nav-view name="tab-chats"></ion-nav-view>
+      </ion-tab>
+
+      <!-- Account Tab -->
+      <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+        <ion-nav-view name="tab-account"></ion-nav-view>
+      </ion-tab>
+
+    </ion-tabs>
+    </ion-view>
+
+  </ion-side-menu-content>
+  <!--左侧菜单-->
+
+  <ion-side-menu side="left" >
+    <ion-header-bar class="bar-positive">
+      <h1 class="title" >栏目</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <!--menu-close 关闭当前打开的侧栏菜单。-->
+        <ion-item menu-close href="#/tab/dash">全部</ion-item>
+
+        <ion-item ng-repeat="tab in tabs" menu-close href="#/tab/chats/{{tab.value}}">
+          <span ng-bind="tab.label"></span>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

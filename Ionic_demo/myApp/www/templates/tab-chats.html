@@ -1,0 +1,38 @@
+<ion-view view-title="微信">
+
+  <ion-nav-buttons side="right">
+
+  </ion-nav-buttons>
+
+  <ion-content>
+    <!--这里的rj-close-back-drop是自定义指令, 后面会讲是干嘛的
+
+       item-button-right 或 item-button-left 类将按钮放在列表项中
+       item-avatar 来创建一个带头像的列表,
+       item-thumbnail-left 类用于添加左侧对齐的缩略图， item-thumbnail-right 类用于添加右侧对齐的缩略图,
+
+    -->
+    <ion-list rj-close-back-drop>
+      <ion-item class="item item-avatar"
+                ng-class="{'rj-item-top': message.isTop}"
+                on-hold="popupMessageOpthins(message)"
+                rj-hold-active
+                ng-repeat="message in messages | orderBy:['isTop', 'lastMessage.timeFrome1970']:true"
+                ng-click="messageDetils(message)">
+        <img ng-src="{{message.pic}}">
+        <!--这个就是来了新消息, 头像上的小红数字-->
+        <span class="rj-sm-red-icon" ng-show="message.showHints">
+          <p ng-bind="message.noReadMessages" style="color: #FFF;font-size: 12px;"></p>
+        </span>
+        <h2 ng-bind="message.name"></h2>
+        <p class="rj-list-p" ng-bind="message.lastMessage.content"></p>
+        <span class="rj-push-right" ng-bind="message.lastMessage.originalTime"></span>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
